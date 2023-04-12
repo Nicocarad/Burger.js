@@ -1,0 +1,71 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #0e2f56;
+  background: linear-gradient(87deg, #ff304f, #0e2f56);
+}
+
+section {
+  padding: 55px;
+  background: #ececda;
+  border: 3px solid #ff304f;
+  width: 1010px;
+  margin: 30px auto;
+  border-radius: 10px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 45px;
+  padding-bottom: 30px;
+}
+
+.ordine {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: stretch;
+}
+
+fieldset {
+  border: 4px solid #0e2f56;
+  height: 340px;
+  width: 294px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  margin-left: 1px;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 10px;
+}
+
+li * {
+  margin-top: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+img#close {
+  width: 30px;
+  height: auto;
+  padding-bottom: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  float: right;
+  cursor: pointer;
+}

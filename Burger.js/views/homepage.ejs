@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/hompage.css" rel="stylesheet" type="text/css" />
+  <title>Login</title>
+</head>
+
+<body>
+  <section>
+    <div class="side-bar">
+      <div id="logo"><a href="http://localhost:3000/users/registrazione" class="homepage" id="logo"><img src="/public/imgs/logo.png" alt="Burger.js logo" /></a></div>
+      <div class="home-return">
+        <p>Non hai un account?</p>
+        <p><a href="http://localhost:3000/users/registrazione">Clicca qui</a>&nbspoppure sul nostro logo per registrarti</p>
+      </div>
+    </div>
+    <div class="form">
+      <form method="post" action="/users/login">
+        <fieldset>
+          <legend>Login</legend>
+          <div class="container">
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="mario.rossi@gmail.com" name="email" class="email" required />
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="********" name="password" class="password" required />
+            <div class="buttons">
+              <button id="register">Conferma</button>
+              <button type="reset" id="dismiss">Cancella</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>

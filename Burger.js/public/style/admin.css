@@ -1,0 +1,313 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #0e2f56;
+  background: linear-gradient(87deg, #ff304f, #0e2f56);
+}
+
+img {
+  width: 100px;
+  height: auto;
+  border: 0;
+}
+
+img#close {
+  width: 30px;
+  height: auto;
+  padding-bottom: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  float: right;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 80px;
+}
+
+img#finger {
+  width: 30px;
+  height: auto;
+}
+
+button.confirm {
+  background-color: #4caf50;
+}
+
+button.delete {
+  background-color: rgb(255, 42, 42);
+}
+
+button:hover.confirm {
+  background-color: #adfd97;
+  border: 2px solid;
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+button:hover.delete {
+  background-color: rgba(255, 92, 92, 0.54);
+  border: 2px solid;
+  border-color: rgb(255, 42, 42);
+  color: rgb(255, 42, 42);
+}
+
+button:active:not(.btn) {
+  position: relative;
+  top: 1px;
+}
+
+input[type="textbox"] {
+  border: 2px solid #ff304f;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+button.confirm:hover::after {
+  content: " ?";
+}
+
+button.delete:hover::after {
+  content: " ?";
+}
+
+section {
+  padding: 55px;
+  background: #ececda;
+  border: 3px solid #ff304f;
+  width: 1000px;
+  margin: 30px auto;
+  border-radius: 10px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+legend {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  color: #0e2f56;
+  font-weight: 800;
+}
+
+button:not(.btn) {
+  font: 16px "Times New Roman", sans-serif;
+  background-color: #0e2f56;
+  color: #ececda;
+  cursor: pointer;
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  margin: auto;
+  width: 120px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+input:not([type="radio"]) {
+  font-size: 15px;
+  border-radius: 8px 8px 8px 8px;
+  font: 14px "Poppins", sans-serif;
+  border: 2px solid #ff304f;
+  padding: 6px;
+  display: block;
+  margin-bottom: 10px;
+  width: 96%;
+  height: 30px;
+}
+
+input:hover {
+  border: 2px solid #0e2f56;
+}
+
+button:hover:not(.btn) {
+  color: #0e2f56;
+  background-color: azure;
+  border-color: #ff304f;
+  transition-duration: 0.3s;
+  font-weight: 500;
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+h1 {
+  font-size: 55px;
+  font-family: cursive;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+li {
+  border: 3px solid #ff304f;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  background: #e0e0d1;
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+img.del {
+  width: 50px;
+  height: auto;
+  border: 0;
+  margin-bottom: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+li:hover {
+  border: 3px solid #0e2f56;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.manage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.prod_manager {
+  padding: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + div + div {
+  width: 280px;
+  margin-top: 10px;
+}
+
+div.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label.radio {
+  display: block;
+  padding: 15px 4px;
+  text-align: center;
+  transition: 0.15s;
+  background: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 42%;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+label.radio:first-child {
+  float: left;
+  box-shadow: 0 0 0 4px #ff304f;
+}
+
+label.radio:last-child {
+  float: right;
+}
+
+#Drink:checked ~ div + div label:last-child {
+  box-shadow: 0 0 0 4px #ff304f;
+}
+
+#Drink:checked ~ div + div label:first-child {
+  box-shadow: 0 0 0 0px #ff304f;
+}
+
+.box {
+  border: 3px solid #0e2f56;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+fieldset {
+  border: 3px solid #0e2f56;
+  height: 400px;
+  text-align: center;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.hidden {
+  position: absolute;
+  display: none;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+#del {
+  margin-top: 35px;
+}
+
+.btn {
+  border-style: none;
+  background-color: #ececda;
+  cursor: pointer;
+}
+
+.btn p {
+  display: inline;
+  color: #ff304f;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}

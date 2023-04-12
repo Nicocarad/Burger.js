@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/vediOrdini.css" rel="stylesheet" type="text/css" />
+  <title>Vista ordini</title>
+  <script>
+    function take(orderId) {
+      document.getElementById("takeOrder").setAttribute("action", "/orders/" + orderId + "?_method=PATCH");
+      document.getElementById("takeOrder").submit();
+    }
+    function end(orderId) {
+      document.getElementById("completeOrder").setAttribute("action", "/orders/" + orderId + "?_method=PATCH");
+      document.getElementById("completeOrder").submit();
+    }
+  </script>
+</head>
+
+<body>
+  <section>
+    <a href="http://localhost:3000/users/logout"><img id="close" src="/public/imgs/close.png" alt="Close" /></a>
+    <h1 class="title">Ordini in attesa</h1>
+    <div class="ordine">
+      <% orders.forEach(el => { if (el.stato === "Da prendere in carico") { %>
+        <div class="box">
+          <fieldset>
+            <legend class="one">Ordine</legend>
+            <form id="takeOrder" method="post">
+              <input type="hidden" id="cook" name="cook" value="<%= cook %>" />
+              <input type="hidden" id="status" name="status" value="In corso" />
+            </form>
+            <img id="circle" src="/public/imgs/circle.png" onclick="take(`<%= el._id %>`)" />
+            <p>
+              <h3>Data e ora</h3>
+              <%= el.date.getDate().toString().padStart(2, '0') %>/<%= (el.date.getMonth()+1).toString().padStart(2, '0') %>/<%= el.date.getFullYear().toString() %><br />
+              <%= el.date.getHours().toString().padStart(2, '0') %>:<%= el.date.getMinutes().toString().padStart(2, '0') %>
+            </p>
+            <p>
+              <h3>Prodotti</h3>
+              <div class="list"><ul><% el.products.forEach(prod => { %><li><%= prod.nome %></li><% }) %></ul></div>
+            </p>
+          </fieldset>
+        </div>
+      <% }}) %>
+    </div>
+  </section>
+  <section>
+    <h1 class="title">Ordini in preparazione:</h1>
+    <div class="ordine">
+      <% orders.forEach(el => { if (el.stato === "In corso") { %>
+        <div class="box">
+          <fieldset>
+            <legend class="two">Ordine</legend>
+            <form id="completeOrder" method="post">
+              <input type="hidden" id="cook" name="cook" value="<%= cook %>" />
+              <input type="hidden" id="status" name="status" value="Completato" />
+            </form>
+            <img id="circle" src="/public/imgs/circle.png" onclick="end(`<%= el._id %>`)" />
+            <p>
+              <h3>Data e ora</h3>
+              <%= el.date.getDate().toString().padStart(2, '0') %>/<%= (el.date.getMonth()+1).toString().padStart(2, '0') %>/<%= el.date.getFullYear().toString() %><br />
+              <%= el.date.getHours().toString().padStart(2, '0') %>:<%= el.date.getMinutes().toString().padStart(2, '0') %>
+            </p>
+            <p>
+              <h3>Prodotti</h3>
+              <div class="list"><ul><% el.products.forEach(prod => { %><li><%= prod.nome %></li><% }) %></ul></div>
+            </p>
+          </fieldset>
+        </div>
+      <% }}) %>
+    </div>
+  </section>
+  <section>
+    <h1 class="title">Ordini completati</h1>
+    <div class="ordine">
+      <% orders.forEach(el => { if (el.stato === "Completato") { %>
+        <div class="box">
+          <fieldset>
+            <legend class="three">Ordine</legend>
+            <p>
+              <h3>Data e ora</h3>
+              <%= el.date.getDate().toString().padStart(2, '0') %>/<%= (el.date.getMonth()+1).toString().padStart(2, '0') %>/<%= el.date.getFullYear().toString() %><br />
+              <%= el.date.getHours().toString().padStart(2, '0') %>:<%= el.date.getMinutes().toString().padStart(2, '0') %>
+            </p>
+            <p>
+              <h3>Prodotti</h3>
+              <div class="list"><ul><% el.products.forEach(prod => { %><li><%= prod.nome %></li><% }) %></ul></div>
+            </p>
+          </fieldset>
+        </div>
+      <% }}) %>
+    </div>
+  </section>
+  <script src="/public/scripts/newOrder.js"></script>
+</body>
+
+</html>

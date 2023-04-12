@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/pagamento.css" rel="stylesheet" type="text/css" />
+  <title>Pagamento</title>
+</head>
+
+<body>
+  <div class="pagamento">
+    <div class="cartaDiCredito">
+        <div class="fronte"><div class="chip"></div>
+          <div class="numero"><p class="placeholder_numero">1111 2222 3333 4444</p></div>
+          <div class="proprietario">
+            <label>Proprietario</label>
+            <p>Mario Rossi</p>
+          </div>
+          <div class="dataScadenza">
+            <label>Scadenza</label>
+            <p>01/22</p>
+          </div>
+        </div>
+    </div>
+    <form class="form" autocomplete="off">
+      <fieldset>
+        <label for="numeroCarta">Numero Carta</label>
+        <input type="num" id="numeroCarta" class="inputNumeroCarta" maxlength="4" required/>
+        <input type="num" id="numeroCarta_1" class="inputNumeroCarta" maxlength="4" required/>
+        <input type="num" id="numeroCarta_2" class="inputNumeroCarta" maxlength="4" required/>
+        <input type="num" id="numeroCarta_3" class="inputNumeroCarta" maxlength="4" required/>
+      </fieldset>
+      <fieldset>
+        <label for="proprietario">Proprietario</label>
+        <input type="text" id="proprietario" required/>
+      </fieldset>
+      <fieldset class="fieldsetScadenza">
+        <label for="meseScadenza">Data di scadenza</label>
+        <div class="select">
+          <select id="meseScadenza" required>
+            <option selected>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+            <option>06</option>
+            <option>07</option>
+            <option>08</option>
+            <option>09</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+          </select>
+        </div>
+        <div class="select">
+          <select id="annoScadenza" required>
+            <option selected>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+            <option>2028</option>
+            <option>2029</option>
+            <option>2030</option>
+            <option>2031</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="campoCCV">
+        <label for="cartaCCV">CCV</label>
+        <input type="text" id="cartaCCV" maxlength="3" required/>
+      </fieldset>
+    </form> 
+    <form method="post" action="/orders">
+      <input type="submit" class="btn" id="proceed" value="PROCEDI CON IL PAGAMENTO" onclick="return window.confirm('Confermi di voler procedere?');">
+    </form>
+  </div>
+</body>
+
+</html>

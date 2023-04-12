@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/admin.css" rel="stylesheet" type="text/css" />
+  <title>Gestione Amministratore</title>
+  <script>function funz() { document.getElementById("modify").setAttribute("action", "/products/" + document.getElementById("Product").value + "?_method=PATCH"); }</script>
+</head>
+
+<body>
+  <section>
+    <a href="http://localhost:3000/users/logout"><img id="close" src="/public/imgs/close.png" alt="Close" /></a>
+    <div class="top">
+      <img class="left" src="/public/imgs/logo.png" alt="Burger.js banner" />
+      <h1>Burger.js</h1>
+      <img class="right" src="/public/imgs/logo.png" alt="Burger.js banner" />
+    </div>
+    <div class="manage">
+      <form method="post" action="/products">
+        <fieldset class="prod_manager">
+          <legend>Aggiungi Prodotto</legend>
+          <label class="add_prod">Nome prodotto:<input type="textbox" name="add_food" id="add_food" required />
+          <label class="add_pr">Prezzo:<input type="textbox" name="add_price" id="add_price" type="text" placeholder="€" required />
+          <div class="radio">
+            <input type="radio" id="Food" name="tipo" value="Food" checked />
+            <input type="radio" id="Drink" name="tipo" value="Drink" />
+            <div><p>Tipologia:</p></div>
+            <div>
+              <label class="radio" for="Food">🍔</label>
+              <label class="radio" for="Drink">🍹</label>
+            </div>
+            <div class="button">
+              <button name="first_button" id="first_button" class="confirm">Conferma</button>
+              <button type="reset" class="delete"><span>Cancella</span></button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <div class="mod_prod">
+        <form id="modify" class="modify" method="post" action="/products/modifyProd">
+          <fieldset class="prod_manager">
+            <legend>Modifica Prodotto</legend>
+            <div>
+              <label for="Product">Prodotto da modificare:</label>
+              <input type="text" name="Product" id="Product" list="myProd" required />
+            </div>
+            <datalist id="myProd">
+              <% prods.forEach(element => { %>
+                <option><%= element.nome %></option>
+              <% }) %>
+            </datalist>
+            <div>Nome prodotto:<input type="textbox" name="mod_prod" id="mod_prod" type="text" /></div>
+            <div>Prezzo:<input type="textbox" name="mod_price" id="mod_price" type="text" placeholder="€" /></div>
+            <div class="button" id="del">
+              <button type="submit" name="second_button" id="second_button" class="confirm" onclick="funz()">Conferma</button>
+              <button type="reset" class="delete">Cancella</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="box">
+      <form method="get" action="/users/addChef">
+        <button class="btn" type="submit">
+          <p>Registra un cuoco</p>
+          <img id="finger" src="/public/imgs/finger.png" />
+        </button>
+      </form>
+    </div>
+    <div class="box">
+      <form method="get" action="/orders/all/transazioni">
+        <button class="btn" type="submit">
+          <p>Vai alle transazioni</p>
+          <img id="finger" src="/public/imgs/finger.png" />
+        </button>
+      </form>
+    </div>
+  </section>
+  <section class="list">
+    <div>
+      <h3>Cibi disponibili</h3>
+      <ul>
+        <% let foods = prods.filter(prod => prod.tipo === "Food"); %>
+        <% foods.forEach(element => { %>
+          <li>
+            <%= element.nome %>&nbsp-&nbsp<%= element.prezzo %>&nbsp€
+            <a href="/products/<%= element._id %>?_method=DELETE"><img class="del" src="/public/imgs/delete.png" /></a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+    <div>
+      <h3>Bevande disponibili</h3>
+      <ul>
+        <% let drinks=prods.filter(prod=> prod.tipo === "Drink"); %>
+        <% drinks.forEach(element=> { %>
+          <li>
+            <%= element.nome %>&nbsp-&nbsp<%= element.prezzo %>&nbsp€
+            <a href="/products/<%= element._id %>?_method=DELETE"><img class="del" src="/public/imgs/delete.png" /></a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </section>
+</body>
+
+</html>

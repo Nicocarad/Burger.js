@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/ordine.css" rel="stylesheet" type="text/css" />
+  <title>Ordine</title>
+  <script>function showPayment() { document.getElementById("payment").style.display="block"; }</script>
+</head>
+
+<body>
+  <section class="list">
+    <a href="http://localhost:3000/homepage"><img id="close" src="/public/imgs/close.png" alt="Close" /></a>
+    <div class="top">
+      <img class="left" src="/public/imgs/logo.png" alt="Burger.js banner" />
+      <h1>Burger.js</h1>
+      <img class="right" src="/public/imgs/logo.png" alt="Burger.js banner" />
+    </div>
+    <div><p class="center">Benvenuto nel nostro menù, clicca sul prodotto che desideri per aggiungerlo al tuo ordine e poi procedi al pagamento</p></div>
+    <div>
+      <h3>Cibi disponibili</h3>
+      <ul class="food">
+      <% let foods = prods.filter(prod => prod.tipo === "Food"); %>
+        <% foods.forEach(el => { %>
+          <li class="prod">
+            <span><%= el.nome %></span>&nbsp-&nbsp<span><%= el.prezzo %>&nbsp€</span>
+            <img class="del" src="/public/imgs/plus.png" onclick="showPayment()" />
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+    <div>
+      <h3>Bevande disponibili</h3>
+      <ul class="food">
+        <% let drinks = prods.filter(prod => prod.tipo === "Drink"); %>
+          <% drinks.forEach(el => { %>
+            <li class="prod">
+              <span><%= el.nome %></span>&nbsp-&nbsp<span><%= el.prezzo %>&nbsp€</span>
+              <img class="del" src="/public/imgs/plus.png" onclick="showPayment()" />
+            </li>
+          <% }) %>
+        </ul>
+    </div>
+  </section>
+  <section id="payment" style="display: none;">
+    <fieldset class="order">
+      <legend>Il tuo ordine</legend>
+      <div class="order"><ul id="ordine"></ul></div>
+      <div class="bottom">
+        <div class="price"><p>Totale:&nbsp<span id="total"></span>&nbsp€</p></div>
+        <div class="click">
+          <p>
+            <form id="send-form" method="post" action="/orders/pagamento">
+              <input type="hidden" id="products" name="products" />
+              <input type="hidden" id="sum" name="sum" />
+              <img id="finger" src="/public/imgs/credit.png" onclick="invia()"/>
+            </form>
+          </p>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+  <script src="/public/scripts/orderScript.js"></script>
+</body>
+
+</html>

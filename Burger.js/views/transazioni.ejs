@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/transazioni.css" rel="stylesheet" type="text/css" />
+  <title>Transazioni</title>
+</head>
+
+<body>
+  <section>
+    <img src="/public/imgs/close.png" id="close" alt="Close" onclick="history.back()" />
+    <h1>Transazioni Effettuate</h1>
+    <div class="ordine">
+      <% orders.forEach(el => { %>
+        <fieldset>
+          <ul>
+            <li>
+              <p>
+                <b>Riferimento utente:</b><br />
+                <%= el.idCliente %>
+              </p>
+              <p><b>Totale pagato:</b>&nbsp<%= el.prezzo %>&nbsp€</p>
+              <p>
+                <b>Data e ora</b><br />
+                <%= el.date.getDate().toString().padStart(2, '0') %>/<%= (el.date.getMonth()+1).toString().padStart(2, '0') %>/<%= el.date.getFullYear().toString() %><br />
+                <%= el.date.getHours().toString().padStart(2, '0') %>:<%= el.date.getMinutes().toString().padStart(2, '0') %>
+              </p>
+            </li>
+          </ul>
+        </fieldset>
+      <% }) %>
+    </div>
+  </section>
+</body>
+
+</html>

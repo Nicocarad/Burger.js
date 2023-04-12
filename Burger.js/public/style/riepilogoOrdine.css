@@ -1,0 +1,89 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #0e2f56;
+  background: linear-gradient(87deg, #ff304f, #0e2f56);
+}
+
+section {
+  padding: 55px;
+  background: #ececda;
+  border: 3px solid #ff304f;
+  width: 1000px;
+  margin: 30px auto;
+  border-radius: 10px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  padding-top: 40px;
+}
+
+ul {
+  padding-left: 65px;
+  margin-left: 0;
+  color: #e72240;
+  font-weight: 700;
+}
+
+h1 {
+  display: list-item;
+  margin-left: 3rem;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h1::marker {
+  content: "🧾";
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.content {
+  font-size: 20px;
+  padding-left: 50px;
+  color: #e72240;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 25px;
+  border-top: 1px solid #0e2f56;
+  height: max-content;
+  padding-top: 15px;
+}
+
+li {
+  margin-top: 5px;
+}
+
+div.stato {
+  border-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+div.stato div {
+  border: 3px solid #0e2e5640;
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+  width: 200px;
+  text-align: center;
+  color: #0e2e5640;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+img#close {
+  width: 25px;
+  height: auto;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  float: right;
+}

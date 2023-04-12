@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/registrazioneChef.css" rel="stylesheet" type="text/css" />
+  <title>Registrazione Cuoco</title>
+</head>
+
+<body>
+  <section>
+    <img src="/public/imgs/close.png" id="close" alt="Close" onclick="history.back()" />
+    <div class="form">
+      <form method="post" action="/users">
+        <fieldset>
+          <legend>Registrazione</legend>
+          <div class="container">
+            <label for="nome"><b>Nome</b></label>
+            <input type="text" placeholder="Mario" name="nome" class="nome" required />
+            <label for="cognome"><b>Cognome</b></label>
+            <input type="text" placeholder="Rossi" name="cognome" class="cognome" required />
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="mario.rossi@gmail.com" name="email" class="email" required />
+            <label for="psw">
+              <b id="psw">Password</b>
+              <div class="hidden">
+                <p>Inserire una password tra 8 e 16 caratteri</p>
+                <p>Per rendere la password più sicura usa lettere maiuscole e minuscole, numeri e caratteri speciali come /*?!$_-</p>
+              </div>
+            </label>
+            <input type="password" placeholder="********" name="password" class="password" minlength="8" maxlength="16" required />
+            <input type="hidden" name="tipo" value="cuoco">
+            <div class="buttons">
+              <button type="submit" id="register">Registra</button>
+              <button type="reset" id="dismiss">Cancella</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+  <script src="/public/scripts/registrScript.js"></script>
+</body>
+
+</html>

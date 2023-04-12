@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="/public/style/riepilogoOrdine.css" rel="stylesheet" type="text/css" />
+  <title>Riepilogo ordine</title>
+</head>
+
+<body>
+  <section>
+    <a href="http://localhost:3000/users/logout"><img id="close" src="/public/imgs/close.png" alt="Close" /></a>
+    <h1>&nbspSalve&nbsp<%= utente %></h1>
+    <h2>Ecco il riepilogo del tuo ordine</h2>
+    <h3>Data e ora</h3>
+    <p class="content">
+      <%= order.date.getDate().toString().padStart(2, '0') %>/<%= (order.date.getMonth()+1).toString().padStart(2, '0') %>/<%= order.date.getFullYear().toString() %><br />
+      <%= order.date.getHours().toString().padStart(2, '0') %>:<%= order.date.getMinutes().toString().padStart(2, '0') %>
+    </p>
+    <h3>Prodotti</h3>
+    <p class="content"><ul><% order.products.forEach(el => { %><li><%= el.nome %></li><% }) %></ul></p>
+    <h3>Totale</h3>
+    <p class="content"><%= order.prezzo %>&nbsp€</p>
+    <h3>Stato</h3>
+    <div class="content">
+      <div class="stato">
+        <div class="take"><p>Da prendere in carico</p></div>
+        <div class="current"><p>In corso</p></div>
+        <div class="completed"><p>Completato</p></div>
+      </div>
+    </div>
+  </section>
+  <span id="orderId" style="display: none;"><%= order._id %></span>
+  <script src="/public/scripts/orderUpdate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #0e2f56;
+  background: linear-gradient(87deg, #ff304f, #0e2f56);
+}
+
+section {
+  padding: 55px;
+  background: #ececda;
+  border: 3px solid #ff304f;
+  width: 1134px;
+  margin: 30px auto;
+  border-radius: 10px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ordine {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: stretch;
+}
+
+legend {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  color: #0e2f56;
+  font-weight: 800;
+}
+
+img#circle {
+  width: 35px;
+  height: auto;
+  display: block;
+  float: right;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 3px solid #0e2f56;
+  height: 380px;
+  overflow: auto;
+}
+
+.box {
+  padding: 10px;
+  background: #ececda;
+  border: 3px solid #ff304f;
+  border-radius: 10px;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  width: 250px;
+  height: 400px;
+}
+
+legend {
+  display: list-item;
+}
+
+legend.one::marker {
+  content: "🕓 ";
+}
+
+legend.two::marker {
+  content: "⏳ ";
+}
+
+legend.three::marker {
+  content: "✅  ";
+}
+
+h1 {
+  font-size: 35px;
+  padding-bottom: 30px;
+}
+
+img#close {
+  width: 25px;
+  height: auto;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  padding-left: 7px;
+  float: right;
+}
