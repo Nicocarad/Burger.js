@@ -14,3 +14,11 @@ Il progetto comprende:
 * Frontend in CSS
 
 * Comunicazione server-to-client (SSE)
+
+Progetto in co-partecipazione con:
+
+* Roberto Ferrareis
+
+* Giuseppe Lisena
+
+* Edda Pansini
